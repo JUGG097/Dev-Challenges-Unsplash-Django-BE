@@ -13,6 +13,6 @@ def health_check(request):
 
 
 class ImageViewSet(viewsets.ModelViewSet):
-    queryset = Images.objects.all()
+    queryset = Images.objects.order_by("-created_at")
     serializer_class = ImageSerializer
     renderer_classes = [ImageAPIRenderer]
